@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1200.0" style="-fx-background-color: #F4F7FA;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hava101.Weather_FXML">
+    <children>
+        <HBox prefHeight="750.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox prefWidth="250.0" spacing="20.0" style="-fx-background-color: #FFFFFF; -fx-padding: 20;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                        <ImageView fitHeight="37.0" fitWidth="38.0">
+                           <image>
+                              <Image url="@../images/main.png" />
+                           </image>
+                        </ImageView>
+                                <Label text="WeatherFX" textFill="#2A2A2A">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="30.0" />
+                            </VBox.margin>
+                        </HBox>
+
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #E8EFFF; -fx-background-radius: 8; -fx-padding: 10;">
+                            <children>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                </ImageView>
+                                <Label text="Dashboard" textFill="#4A79FF">
+                                    <font><Font name="System Bold" size="14.0" /></font>
+                                </Label>
+                            </children>
+                        </HBox>
+
+                        <Region VBox.vgrow="ALWAYS" /> <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-padding: 10;">
+                        <children>
+                        <Button fx:id="logOutButton" alignment="CENTER" mnemonicParsing="false" onAction="#logOutButton" style="-fx-opacity: 0.9; -fx-background-radius: 8; -fx-background-color: #E8EFFF;" text="Log Out" textFill="#4a79ff">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            </ImageView>
+                        </children>
+                        <VBox.margin>
+                            <Insets top="20.0" />
+                        </VBox.margin>
+                    </HBox>
+                    </children>
+                </VBox>
+
+                <VBox prefWidth="550.0" spacing="20.0" style="-fx-background-color: #F4F7FA; -fx-padding: 30;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label text="Today's Highlights" textFill="#2A2A2A">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                </ImageView>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </HBox>
+
+                        <GridPane hgap="20.0" vgap="20.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="180.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <VBox spacing="10.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-padding: 20;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <children>
+                                        <Label text="Pressure" textFill="#7E7E7E" />
+                                        <AnchorPane prefHeight="80.0">
+                                            <Label fx:id="pressureLabel" alignment="CENTER" layoutX="70.0" text="1013" textFill="#2A2A2A" AnchorPane.leftAnchor="65.0" AnchorPane.topAnchor="30.0">
+                                                <font><Font name="System Bold" size="30.0" /></font>
+                                            </Label>
+                                 <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="6.0" layoutY="26.0">
+                                    <image>
+                                       <Image url="@../images/pressure.png" />
+                                    </image>
+                                 </ImageView>
+                                        </AnchorPane>
+                                    </children>
+                                </VBox>
+                                <VBox spacing="15.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-padding: 20;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <children>
+                                        <Label text="Sunrise &amp; Sunset" textFill="#7E7E7E" />
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                            <ImageView fx:id="sunriseImage" fitHeight="24.0" fitWidth="24.0">
+                                            </ImageView>
+                                            <VBox>
+                                                <Label fx:id="sunriseClockLabel" text="5:39 AM" textFill="#2A2A2A"><font><Font name="System Bold" size="16.0" /></font></Label>
+                                            </VBox>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                            <ImageView fx:id="sunsetImage" fitHeight="24.0" fitWidth="24.0">
+                                            </ImageView>
+                                            <VBox>
+                                                <Label fx:id="sunsetClockLabel" text="8:24 PM" textFill="#2A2A2A"><font><Font name="System Bold" size="16.0" /></font></Label>
+                                            </VBox>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <VBox alignment="TOP_LEFT" spacing="5.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-padding: 20;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <Label text="Wind Status" textFill="#7E7E7E" />
+                           <AnchorPane>
+                              <VBox.margin>
+                                 <Insets bottom="10.0" top="10.0" />
+                              </VBox.margin>
+                              <children>
+                                          <Label fx:id="windLabel" layoutX="70.0" text="16 km/h" textFill="#2A2A2A">
+                                              <font>
+                                       <Font name="System Bold" size="30.0" />
+                                    </font>
+                                          </Label>
+                                 <ImageView fitHeight="50.0" fitWidth="48.0">
+                                    <image>
+                                       <Image url="@../images/wind.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </AnchorPane>
+                                </VBox>
+                                <VBox alignment="TOP_LEFT" spacing="5.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-padding: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <Label text="Feels Like" textFill="#7E7E7E" />
+                                    <Label fx:id="feelsLikeLabel" text="14" textFill="#2A2A2A">
+                                        <font><Font name="System Bold" size="30.0" /></font>
+                                        <VBox.margin><Insets bottom="10.0" top="10.0" /></VBox.margin>
+                                    </Label>
+                                    <Label text="Temperature" textFill="#A0A0A0" />
+                                </VBox>
+                                <VBox alignment="TOP_LEFT" spacing="5.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-padding: 20;" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                    <Label text="Humidity" textFill="#7E7E7E" />
+                           <AnchorPane>
+                              <VBox.margin>
+                                 <Insets bottom="10.0" top="10.0" />
+                              </VBox.margin>
+                              <children>
+                                          <Label fx:id="humidityLabel" layoutX="70.0" text="40 %" textFill="#2A2A2A">
+                                              <font>
+                                       <Font name="System Bold" size="30.0" />
+                                    </font>
+                                          </Label>
+                                 <ImageView fitHeight="50.0" fitWidth="48.0" layoutY="-2.0">
+                                    <image>
+                                       <Image url="@../images/humadity2.png" />
+                                    </image>
+                                 </ImageView>
+                              </children>
+                           </AnchorPane>
+                                </VBox>
+                                <VBox alignment="TOP_LEFT" spacing="5.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-padding: 20;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <Label text="Air Quality" textFill="#7E7E7E" />
+                                    <Label fx:id="airQualityLabel" text="33" textFill="#2A2A2A">
+                                        <font><Font name="System Bold" size="30.0" /></font>
+                                        <VBox.margin><Insets bottom="10.0" top="10.0" /></VBox.margin>
+                                    </Label>
+                                </VBox>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="20.0" /> </VBox.margin>
+                        </GridPane>
+
+                        <VBox spacing="10.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15; -fx-padding: 20;">
+                            <children>
+                                <Label text="5-Day Forecast" textFill="#2A2A2A">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </Label>
+
+                                <HBox alignment="CENTER" spacing="10.0" style="-fx-padding: 10; -fx-background-color: #F0F3F7; -fx-background-radius: 10;">
+                                    <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-padding: 10 15 10 15;">
+                                        <Label fx:id="forecastDay1" text="Mon" textFill="#4A79FF"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                        <ImageView fx:id="forecastImage1" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                        <Label fx:id="forecastTemparature1" text="28°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-padding: 10 15 10 15;">
+                                        <Label fx:id="forecastDay2" text="Tue" textFill="#4a79ff"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                        <ImageView fx:id="forecastImage2" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                        <Label fx:id="forecastTemparature2" text="25°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="5.0" style="-fx-padding: 10 15 10 15; -fx-background-color: #FFFFFF; -fx-background-radius: 8;">
+                                        <Label fx:id="forecastDay3" text="Wed" textFill="#4a79ff"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                        <ImageView fx:id="forecastImage3" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                        <Label fx:id="forecastTemparature3" text="22°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="5.0" style="-fx-padding: 10 15 10 15; -fx-background-color: #FFFFFF; -fx-background-radius: 8;">
+                                        <Label fx:id="forecastDay4" text="Thu" textFill="#4a79ff"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                        <ImageView fx:id="forecastImage4" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                        <Label fx:id="forecastTemparature4" text="26°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="5.0" style="-fx-padding: 10 15 10 15; -fx-background-color: #FFFFFF; -fx-background-radius: 8;">
+                                        <Label fx:id="forecastDay5" text="Fri" textFill="#4a79ff"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                        <ImageView fx:id="forecastImage5" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                        <Label fx:id="forecastTemparature5" text="24°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="5.0" style="-fx-padding: 10 15 10 15; -fx-background-radius: 8;">
+                                        <Label fx:id="forecastDay6" text="Sat" textFill="#4a79ff"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                        <ImageView fx:id="forecastImage6" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                        <Label fx:id="forecastTemparature6" text="23°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="5.0" style="-fx-padding: 10 15 10 15; -fx-background-radius: 8;">
+                                        <Label fx:id="forecastDay7" text="Sun" textFill="#4a79ff"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                        <ImageView fx:id="forecastImage7" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                        <Label fx:id="forecastTemparature7" text="25°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                    </VBox>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+
+                <VBox prefWidth="380.0" spacing="20.0" style="-fx-background-color: #FFFFFF; -fx-padding: 20;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <TextField fx:id="citySearchField" onAction="#searchCity" promptText="Search a city..." style="-fx-background-radius: 8; -fx-background-color: #F4F7FA;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></TextField>
+                                <Region HBox.hgrow="ALWAYS" />
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="15.0" />
+                            </VBox.margin>
+                        </HBox>
+
+                        <VBox spacing="5.0">
+                            <HBox alignment="CENTER_LEFT">
+                                <Label fx:id="currrentCityLabel" text="The Hague, Netherlands" textFill="#2A2A2A">
+                                    <font><Font name="System Bold" size="16.0" /></font>
+                                </Label>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                </ImageView>
+                            </HBox>
+                            <Label fx:id="currentDate" text="Mon, 10 Aug" textFill="#A0A0A0">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font></Label>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </VBox>
+
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <Label text="Today" textFill="#2A2A2A"><font><Font size="14.0" /></font></Label>
+                            <ImageView fx:id="currentImage" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                            </ImageView>
+                            <HBox alignment="BASELINE_CENTER">
+                                <Label fx:id="currentTemparatureLabel" text="19" textFill="#2A2A2A">
+                                    <font><Font name="System Bold" size="60.0" /></font>
+                                </Label>
+                                <Label text="°C" textFill="#2A2A2A">
+                                    <font><Font name="System Bold" size="20.0" /></font>
+                                    <HBox.margin><Insets bottom="18.0" left="2.0" /></HBox.margin> </Label>
+                            </HBox>
+                            <Label fx:id="currentWeatherCondition" text="Sunny" textFill="#A0A0A0" />
+                            <HBox alignment="CENTER" spacing="15.0">
+                                <VBox.margin><Insets bottom="20.0" top="15.0" /></VBox.margin>
+                                <HBox alignment="CENTER" spacing="3.0" />
+                                <HBox alignment="CENTER" spacing="3.0" />
+                                <HBox alignment="CENTER" spacing="3.0" />
+                            </HBox>
+                        </VBox>
+
+                        <VBox spacing="10.0">
+                            <HBox alignment="CENTER_LEFT">
+                                <Label text="Today" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                <Region HBox.hgrow="ALWAYS" />
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10.0" style="-fx-padding: 10; -fx-background-color: #F0F3F7; -fx-background-radius: 10;">
+                                <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-padding: 10 15 10 15;">
+                                    <Label fx:id="todaysClock1" text="Now" textFill="#4A79FF"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                    <ImageView fx:id="todaysForecastImage1" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                    <Label fx:id="todaysForecastTemparature1" text="19°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                </VBox>
+                                <VBox alignment="CENTER" spacing="5.0" style="-fx-padding: 10 15 10 15; -fx-background-radius: 8; -fx-background-color: #FFFFFF;">
+                                    <Label fx:id="todaysClock2" text="11:00" textFill="#4a79ff"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                    <ImageView fx:id="todaysForecastImage2" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                    <Label fx:id="todaysForecastTemparature2" text="18°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                </VBox>
+                                <VBox alignment="CENTER" spacing="5.0" style="-fx-padding: 10 15 10 15; -fx-background-radius: 8; -fx-background-color: #FFFFFF;">
+                                    <Label fx:id="todaysClock3" text="12:00" textFill="#4a79ff"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                    <ImageView fx:id="todaysForecastImage3" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                    <Label fx:id="todaysForecastTemparature3" text="19°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                </VBox>
+                                <VBox alignment="CENTER" spacing="5.0" style="-fx-padding: 10 15 10 15; -fx-background-radius: 8; -fx-background-color: #FFFFFF;">
+                                    <Label fx:id="todaysClock4" text="13:00" textFill="#4a79ff"><font><Font name="System Bold" size="12.0" /></font></Label>
+                                    <ImageView fx:id="todaysForecastImage4" fitHeight="24.0" fitWidth="24.0"> </ImageView>
+                                    <Label fx:id="todaysForecastTemparature4" text="21°" textFill="#2A2A2A"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
