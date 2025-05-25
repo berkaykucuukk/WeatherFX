@@ -59,6 +59,8 @@ java Main
 - [OpenWeatherMap](https://openweathermap.org/api) - For weather data
 - [Pixabay](https://pixabay.com/) - For images
 - [Flaticon](https://www.flaticon.com/) - For icons
+- https://dribbble.com/andreas_kruszakin - For Design
+  
 
 ---
 
